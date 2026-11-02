@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Your Free Estimate | Major League Moving</title>
+<meta name="description" content="Tell us about your move and get a free estimate from Major League Moving, Abington, PA movers serving Greater Philadelphia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #131628;
+    --muted: #5b6070;
+    --line: #dfe4ec;
+    --bg: #f6f8fb;
+    --accent: #1f5fbf;
+    --accent-dark: #174a96;
+    --accent-soft: #e9f0fa;
+    --header-bg: #111214;
+    --white: #ffffff;
+    --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+    --body: "Poppins", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); min-height: 100vh; }
+  a { color: inherit; }
+  button { font: inherit; }
+
+  /* ---------- Slim header ---------- */
+  .q-header { position: sticky; top: 0; z-index: 10; background: var(--header-bg); height: 64px; }
+  .q-header .inner { max-width: 1200px; margin: 0 auto; height: 100%; padding: 0 20px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .q-back { justify-self: start; background: none; border: 0; color: #d6d8dd; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; cursor: pointer; padding: 8px 0; text-decoration: none; }
+  .q-back:hover { color: var(--white); }
+  .q-back svg { width: 16px; height: 16px; }
+  .q-logo img { height: 52px; width: 52px; display: block; }
+  .q-phone { justify-self: end; color: var(--white); text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 21px; display: inline-flex; align-items: center; gap: 7px; }
+  .q-phone svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* ---------- Step layout ---------- */
+  main { max-width: 680px; margin: 0 auto; padding: 32px 20px 140px; }
+  .tip { display: flex; gap: 14px; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 28px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+  .tip svg { flex: none; width: 34px; height: 34px; }
+  h1 { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; text-transform: uppercase; text-align: center; margin: 0 0 8px; }
+  .step-sub { text-align: center; font-family: var(--display); font-weight: 600; font-size: 19px; text-transform: uppercase; color: var(--muted); margin: 0 0 26px; }
+  .step { display: none; }
+  .step.active { display: block; animation: rise .25s ease; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* Big service cards (step 1) */
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .card input, .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .card label {
+    position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+    background: var(--white); border: 2px solid var(--line); border-radius: 12px; padding: 24px 14px 20px; cursor: pointer;
+    transition: border-color .15s, background .15s, box-shadow .15s;
+  }
+  .card label:hover { border-color: #b9cbe8; }
+  .card .ic { width: 64px; height: 64px; border-radius: 50%; background: var(--accent-soft); display: grid; place-items: center; }
+  .card .ic svg { width: 34px; height: 34px; }
+  .card strong { font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase; line-height: 1; }
+  .card small { font-size: 13px; color: var(--muted); line-height: 1.4; }
+  .card input:checked + label { border-color: var(--accent); background: #f3f7fd; box-shadow: 0 6px 18px rgba(31,95,191,.12); }
+  .card input:checked + label .ic { background: var(--white); }
+  .card input:focus-visible + label, .chip input:focus-visible + label { outline: 3px solid #9fc0f2; outline-offset: 2px; }
+  .check { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--line); background: var(--white); display: grid; place-items: center; }
+  .check svg { width: 14px; height: 14px; opacity: 0; }
+  .card input:checked + label .check { background: var(--accent); border-color: var(--accent); }
+  .card input:checked + label .check svg { opacity: 1; }
+
+  /* Fields */
+  .field { margin-bottom: 16px; }
+  .field > label, .group-label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; }
+  .opt { font-weight: 400; color: var(--muted); }
+  .row { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
+  .row.half { grid-template-columns: 1fr 1fr; }
+  input[type=text], input[type=tel], input[type=email], input[type=date], select, textarea {
+    width: 100%; font: inherit; font-size: 15px; color: var(--ink); background: var(--white); border: 1.5px solid var(--line);
+    border-radius: 8px; padding: 13px 14px; transition: border-color .15s, box-shadow .15s;
+  }
+  textarea { min-height: 96px; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(31,95,191,.15); }
+  input.invalid { border-color: #d64545; }
+  .err { color: #c03535; font-size: 13px; margin-top: 6px; display: none; }
+  .err.show { display: block; }
+  .checkline { display: flex; align-items: center; gap: 10px; font-size: 14px; margin: 4px 0 18px; cursor: pointer; }
+  .checkline input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+  /* Chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+  .chip { position: relative; }
+  .chip label {
+    display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1.5px solid var(--line); border-radius: 999px;
+    padding: 10px 16px; font-size: 14px; font-weight: 500; cursor: pointer; transition: border-color .15s, background .15s, color .15s;
+  }
+  .chip label:hover { border-color: #b9cbe8; }
+  .chip input:checked + label { background: var(--accent); border-color: var(--accent); color: var(--white); }
+
+  /* Review */
+  .review { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .review section { padding: 16px 20px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; }
+  .review section:last-child { border-bottom: 0; }
+  .review h3 { margin: 0; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .review p { grid-column: 1; margin: 0; font-size: 15px; line-height: 1.55; }
+  .review .edit { grid-row: 1 / span 2; grid-column: 2; align-self: center; background: none; border: 0; color: var(--accent); font-weight: 600; font-size: 14px; cursor: pointer; }
+  .review .edit:hover { text-decoration: underline; }
+
+  /* Done */
+  .done { text-align: center; padding-top: 30px; }
+  .done .badge { width: 84px; height: 84px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin: 0 auto 22px; box-shadow: 0 10px 30px rgba(31,95,191,.3); }
+  .done .badge svg { width: 42px; height: 42px; }
+  .done p { color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 480px; margin: 0 auto 14px; }
+  .done .home { display: inline-block; margin-top: 14px; background: var(--accent); color: var(--white); text-decoration: none; font-weight: 600; padding: 14px 28px; border-radius: 8px; }
+
+  /* ---------- Bottom bar ---------- */
+  .q-bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--white); border-top: 1px solid var(--line); box-shadow: 0 -4px 20px rgba(19,22,40,.05); }
+  .q-bar .inner { max-width: 1200px; margin: 0 auto; padding: 16px 20px calc(16px + env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 20px; }
+  .progress { flex: 1; max-width: 600px; margin: 0 auto; }
+  .progress-track { height: 10px; border-radius: 999px; background: var(--accent-soft); overflow: hidden; }
+  .progress-fill { height: 100%; width: 0; background: var(--accent); border-radius: inherit; transition: width .3s ease; }
+  .progress-label { font-size: 12px; color: var(--muted); margin-top: 6px; text-align: center; }
+  .btn-next {
+    flex: none; min-width: 170px; background: var(--accent); color: var(--white); border: 0; border-radius: 8px;
+    padding: 15px 26px; font-family: var(--display); font-weight: 700; font-size: 20px; text-transform: uppercase; cursor: pointer; transition: background .15s;
+  }
+  .btn-next:hover:not(:disabled) { background: var(--accent-dark); }
+  .btn-next:disabled { background: #c3cad6; cursor: not-allowed; }
+  .q-bar.hidden { display: none; }
+
+  @media (max-width: 640px) {
+    .q-header { height: 58px; }
+    .q-logo img { height: 46px; width: 46px; }
+    .q-phone span { display: none; }
+    .q-phone svg { width: 22px; height: 22px; }
+    main { padding-top: 22px; }
+    h1 { font-size: 32px; }
+    .step-sub { font-size: 17px; }
+    .cards { gap: 10px; }
+    .card label { padding: 20px 8px 16px; }
+    .card strong { font-size: 20px; }
+    .card .ic { width: 54px; height: 54px; }
+    .row, .row.half { grid-template-columns: 1fr; gap: 0; }
+    .q-bar .inner { gap: 14px; }
+    .btn-next { min-width: 0; padding: 14px 20px; font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="q-header">
+  <div class="inner">
+    <a class="q-back" id="back" href="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span id="back-label">Home</span>
+    </a>
+    <a class="q-logo" href="index.html" aria-label="Major League Moving home"><img src="assets/mlm-logo-white.svg" alt="Major League Moving" width="52" height="52"></a>
+    <a class="q-phone" href="tel:+12676264853" aria-label="Call (267) 626-4853">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span>(267) 626-4853</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <form id="wizard" novalidate>
+
+    <!-- Step 1: services -->
+    <div class="step" data-step="services">
+      <div class="tip"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="15" r="9" fill="#e9f0fa"/><path d="M13 22h8m-7 4h6M17 6a8 8 0 0 0-4.5 14.6V22h9v-1.4A8 8 0 0 0 17 6z" fill="none" stroke="#1f5fbf" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Not sure exactly what you need? Pick everything that might apply and we'll sort out the details together.</div>
+      <h1>How can we help?</h1>
+      <p class="step-sub">Select all that apply</p>
+      <div class="cards">
+        <div class="card"><input type="checkbox" id="s-moving" name="services" value="Moving"><label for="s-moving"><span class="check"><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="ic"><svg viewBox="0 0 32 32"><path d="M5 15 16 6l11 9v12H5z" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M13 27v-7h6v7" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linejoin="round"/></svg></span>
+          <strong>Moving</strong><small>Homes, apartments &amp; offices</small></label></div>
+        <div class="card"><input type="checkbox" id="s-packing" name="services" value="Packing"><label for="s-packing"><span class="check"><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="ic"><svg viewBox="0 0 32 32"><path d="M5 10 16 5l11 5v13l-11 5-11-5z" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M5 10l11 5 11-5M16 15v13" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linejoin="round"/></svg></span>
+          <strong>Packing</strong><small>Whole home or just the fragile items</small></label></div>
+        <div class="card"><input type="checkbox" id="s-labor" name="services" value="Labor only"><label for="s-labor"><span class="check"><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="ic"><svg viewBox="0 0 32 32"><path d="M8 4h3l5 18" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="25" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><rect x="13" y="8" width="11" height="9" rx="1" transform="rotate(-15 18 12)" stroke="var(--accent)" stroke-width="2" fill="none"/><path d="M21 24l7-2" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span>
+          <strong>Labor only</strong><small>Loading, unloading, pods &amp; trucks</small></label></div>
+        <div class="card"><input type="checkbox" id="s-junk" name="services" value="Junk removal"><label for="s-junk"><span class="check"><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="ic"><svg viewBox="0 0 32 32"><path d="M7 9h18M13 9V6h6v3M9 9l1.5 18h11L23 9" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 14v8M18 14v8" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span>
+          <strong>Junk removal</strong><small>Haul away what you don't need</small></label></div>
+      </div>
+    </div>
+
+    <!-- Step 2: from / job location -->
+    <div class="step" data-step="from">
+      <div class="tip"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#e9f0fa"/><path d="M17 8a6 6 0 0 0-6 6c0 4.5 6 11 6 11s6-6.5 6-11a6 6 0 0 0-6-6zm0 8.2a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4z" fill="#1f5fbf"/></svg>
+        Your address helps us plan the right crew and truck for the job.</div>
+      <h1 id="from-title">Where are we moving you from?</h1>
+      <p class="step-sub">Starting location</p>
+      <div class="field"><label for="from-street">Street address</label><input type="text" id="from-street" name="fromStreet" autocomplete="address-line1" required></div>
+      <div class="row">
+        <div class="field"><label for="from-apt">Apt / suite <span class="opt">(optional)</span></label><input type="text" id="from-apt" name="fromApt" autocomplete="address-line2"></div>
+        <div class="field"><label for="from-zip">ZIP code</label><input type="text" id="from-zip" name="fromZip" inputmode="numeric" maxlength="5" autocomplete="postal-code" required><div class="err" id="from-zip-err">Enter a 5-digit ZIP code.</div></div>
+      </div>
+      <label class="checkline"><input type="checkbox" name="business" id="business"> This is for a business</label>
+      <div class="field"><label for="size">How much are we moving?</label>
+        <select id="size" name="size" required>
+          <option value="">Choose one</option>
+          <option>Just a few items</option>
+          <option>Studio or 1 bedroom</option>
+          <option>2 bedrooms</option>
+          <option>3 bedrooms</option>
+          <option>4+ bedrooms</option>
+          <option>Office or commercial space</option>
+          <option>Storage unit</option>
+        </select>
+      </div>
+      <span class="group-label">Getting in and out</span>
+      <div class="chips" data-radio="fromAccess">
+        <div class="chip"><input type="radio" id="fa-ground" name="fromAccess" value="Ground floor" checked><label for="fa-ground">Ground floor</label></div>
+        <div class="chip"><input type="radio" id="fa-stairs" name="fromAccess" value="Stairs"><label for="fa-stairs">Stairs</label></div>
+        <div class="chip"><input type="radio" id="fa-elev" name="fromAccess" value="Elevator"><label for="fa-elev">Elevator</label></div>
+      </div>
+    </div>
+
+    <!-- Step 3: to (moving only) -->
+    <div class="step" data-step="to">
+      <div class="tip"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#e9f0fa"/><path d="M9 21h16M12 21v-6m10 6v-6M10 15l7-6 7 6" fill="none" stroke="#1f5fbf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Stairs and elevators change how long a move takes, so they help us quote accurately.</div>
+      <h1>Where are you moving to?</h1>
+      <p class="step-sub">Destination</p>
+      <label class="checkline"><input type="checkbox" id="to-unknown" name="toUnknown"> I don't have the new address yet</label>
+      <div id="to-fields">
+        <div class="field"><label for="to-street">Street address</label><input type="text" id="to-street" name="toStreet" autocomplete="off" required></div>
+        <div class="row">
+          <div class="field"><label for="to-apt">Apt / suite <span class="opt">(optional)</span></label><input type="text" id="to-apt" name="toApt" autocomplete="off"></div>
+          <div class="field"><label for="to-zip">ZIP code</label><input type="text" id="to-zip" name="toZip" inputmode="numeric" maxlength="5" autocomplete="off" required><div class="err" id="to-zip-err">Enter a 5-digit ZIP code.</div></div>
+        </div>
+        <span class="group-label">Getting in and out</span>
+        <div class="chips">
+          <div class="chip"><input type="radio" id="ta-ground" name="toAccess" value="Ground floor" checked><label for="ta-ground">Ground floor</label></div>
+          <div class="chip"><input type="radio" id="ta-stairs" name="toAccess" value="Stairs"><label for="ta-stairs">Stairs</label></div>
+          <div class="chip"><input type="radio" id="ta-elev" name="toAccess" value="Elevator"><label for="ta-elev">Elevator</label></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: big items -->
+    <div class="step" data-step="items">
+      <div class="tip"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#e9f0fa"/><path d="M8 14h18v7H8zM8 17h18M11 17v4M15 17v4M19 17v4M23 17v4M10 14c0-3 3-4.5 7-4.5s7 1.5 7 4.5" fill="none" stroke="#1f5fbf" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Pianos, safes and gym equipment need extra hands and gear. Flagging them now means no surprises on moving day.</div>
+      <h1>Anything big or tricky?</h1>
+      <p class="step-sub">Select any that apply</p>
+      <div class="chips" id="item-chips">
+        <div class="chip"><input type="checkbox" id="i-piano" name="items" value="Piano"><label for="i-piano">Piano</label></div>
+        <div class="chip"><input type="checkbox" id="i-safe" name="items" value="Safe"><label for="i-safe">Safe</label></div>
+        <div class="chip"><input type="checkbox" id="i-gym" name="items" value="Gym equipment"><label for="i-gym">Gym equipment</label></div>
+        <div class="chip"><input type="checkbox" id="i-pool" name="items" value="Pool table"><label for="i-pool">Pool table</label></div>
+        <div class="chip"><input type="checkbox" id="i-appl" name="items" value="Large appliances"><label for="i-appl">Large appliances</label></div>
+        <div class="chip"><input type="checkbox" id="i-bunk" name="items" value="Furniture to take apart"><label for="i-bunk">Furniture to take apart</label></div>
+        <div class="chip"><input type="checkbox" id="i-none" name="itemsNone" value="None"><label for="i-none">Nothing unusual</label></div>
+      </div>
+      <div class="field"><label for="notes">Anything else we should know? <span class="opt">(optional)</span></label>
+        <textarea id="notes" name="notes" placeholder="Narrow driveway, long walk to the truck, items going to storage..."></textarea></div>
+    </div>
+
+    <!-- Step 5: when -->
+    <div class="step" data-step="when">
+      <div class="tip"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#e9f0fa"/><rect x="9" y="11" width="16" height="14" rx="2" fill="none" stroke="#1f5fbf" stroke-width="1.8"/><path d="M9 15h16M13 9v4m8-4v4" stroke="#1f5fbf" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Weekends and the end of the month fill up first. If your dates are flexible, let us know.</div>
+      <h1>When works for you?</h1>
+      <p class="step-sub">Pick a date and time</p>
+      <div class="field"><label for="date">Preferred date</label><input type="date" id="date" name="date" required></div>
+      <span class="group-label">Arrival window</span>
+      <div class="chips">
+        <div class="chip"><input type="radio" id="t-am" name="time" value="Morning (8am–12pm)" checked><label for="t-am">Morning</label></div>
+        <div class="chip"><input type="radio" id="t-pm" name="time" value="Afternoon (12–5pm)"><label for="t-pm">Afternoon</label></div>
+        <div class="chip"><input type="radio" id="t-any" name="time" value="Anytime"><label for="t-any">Anytime</label></div>
+      </div>
+      <label class="checkline"><input type="checkbox" name="flexible" id="flexible"> My dates are flexible</label>
+    </div>
+
+    <!-- Step 6: contact -->
+    <div class="step" data-step="contact">
+      <div class="tip"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#e9f0fa"/><circle cx="17" cy="13" r="4" fill="none" stroke="#1f5fbf" stroke-width="1.8"/><path d="M9.5 25c1.2-4 4.2-6 7.5-6s6.3 2 7.5 6" fill="none" stroke="#1f5fbf" stroke-width="1.8" stroke-linecap="round"/></svg>
+        We'll only use this to send your estimate. Prefer email over calls? Just pick it below.</div>
+      <h1>How can we reach you?</h1>
+      <p class="step-sub">Your contact details</p>
+      <div class="row half">
+        <div class="field"><label for="first">First name</label><input type="text" id="first" name="first" autocomplete="given-name" required></div>
+        <div class="field"><label for="last">Last name</label><input type="text" id="last" name="last" autocomplete="family-name" required></div>
+      </div>
+      <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required><div class="err" id="phone-err">Enter a 10-digit phone number.</div></div>
+      <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required><div class="err" id="email-err">Enter a valid email address.</div></div>
+      <span class="group-label">Best way to reach you</span>
+      <div class="chips">
+        <div class="chip"><input type="radio" id="c-call" name="contactPref" value="Call" checked><label for="c-call">Call</label></div>
+        <div class="chip"><input type="radio" id="c-text" name="contactPref" value="Text"><label for="c-text">Text</label></div>
+        <div class="chip"><input type="radio" id="c-email" name="contactPref" value="Email"><label for="c-email">Email</label></div>
+      </div>
+    </div>
+
+    <!-- Step 7: review -->
+    <div class="step" data-step="review">
+      <div class="tip"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#e9f0fa"/><path d="M11 17.5l4 4 8-9" fill="none" stroke="#1f5fbf" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Look everything over. You can edit any section before sending.</div>
+      <h1>Review your request</h1>
+      <p class="step-sub">Almost done</p>
+      <div class="review" id="review"></div>
+    </div>
+
+    <!-- Done -->
+    <div class="step done" data-step="done">
+      <div class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h1>Request received!</h1>
+      <p id="done-msg">Thanks! We'll reach out soon to go over your free estimate.</p>
+      <p>Need an answer faster? Call us at <a href="tel:+12676264853"><strong>(267) 626-4853</strong></a>.</p>
+      <a class="home" href="index.html">Back to home</a>
+    </div>
+  </form>
+</main>
+
+<div class="q-bar" id="bar">
+  <div class="inner">
+    <div class="progress">
+      <div class="progress-track" role="progressbar" aria-label="Quote progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="fill"></div></div>
+      <div class="progress-label" id="progress-label"></div>
+    </div>
+    <button type="button" class="btn-next" id="next" disabled>Next</button>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('wizard');
+  const steps = [...form.querySelectorAll('.step')];
+  const byName = name => steps.find(s => s.dataset.step === name);
+  const nextBtn = document.getElementById('next');
+  const backLink = document.getElementById('back');
+  const backLabel = document.getElementById('back-label');
+  const fill = document.getElementById('fill');
+  const progressLabel = document.getElementById('progress-label');
+  const bar = document.getElementById('bar');
+  const val = name => (form.elements[name] && form.elements[name].value || '').trim();
+  const checked = name => [...form.querySelectorAll(`[name="${name}"]:checked`)].map(i => i.value);
+  const digits = s => s.replace(/\D/g, '');
+
+  // Preselect from homepage links, e.g. quote.html?service=packing
+  const preset = {
+    'full-service': ['s-moving'], moving: ['s-moving'], packing: ['s-packing'], labor: ['s-labor'], pods: ['s-labor'],
+    commercial: ['s-moving', 'business'], piano: ['s-moving', 'i-piano'], junk: ['s-junk'], storage: ['s-moving'],
+  }[new URLSearchParams(location.search).get('service')] || [];
+  preset.forEach(id => { const el = document.getElementById(id); if (el) el.checked = true; });
+
+  const today = new Date();
+  today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  document.getElementById('date').min = today.toISOString().slice(0, 10);
+
+  // The destination step only applies when "Moving" is selected
+  const flow = () => checked('services').includes('Moving')
+    ? ['services', 'from', 'to', 'items', 'when', 'contact', 'review']
+    : ['services', 'from', 'items', 'when', 'contact', 'review'];
+  let current = 'services';
+
+  const valid = {
+    services: () => checked('services').length > 0,
+    from: () => val('fromStreet') && /^\d{5}$/.test(val('fromZip')) && val('size'),
+    to: () => form.elements.toUnknown.checked || (val('toStreet') && /^\d{5}$/.test(val('toZip'))),
+    items: () => true,
+    when: () => !!val('date'),
+    contact: () => val('first') && val('last') && digits(val('phone')).length === 10 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email')),
+    review: () => true,
+    done: () => true,
+  };
+
+  // Field-level messages appear only after the person has left a field
+  const showErr = (inputId, errId, ok) => {
+    const input = document.getElementById(inputId);
+    if (!input.dataset.touched) return;
+    input.classList.toggle('invalid', !ok);
+    document.getElementById(errId).classList.toggle('show', !ok);
+  };
+  const fieldChecks = () => {
+    showErr('from-zip', 'from-zip-err', /^\d{5}$/.test(val('fromZip')));
+    showErr('to-zip', 'to-zip-err', /^\d{5}$/.test(val('toZip')));
+    showErr('phone', 'phone-err', digits(val('phone')).length === 10);
+    showErr('email', 'email-err', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email')));
+  };
+  form.addEventListener('focusout', e => { if (e.target.matches('input')) { e.target.dataset.touched = '1'; fieldChecks(); } });
+
+  const refresh = () => {
+    const order = flow();
+    const i = order.indexOf(current);
+    const pct = current === 'done' ? 100 : Math.round(((i + 1) / order.length) * 100);
+    fill.style.width = pct + '%';
+    fill.parentElement.setAttribute('aria-valuenow', pct);
+    progressLabel.textContent = current === 'done' ? '' : `Step ${i + 1} of ${order.length}`;
+    nextBtn.textContent = current === 'review' ? 'Send request' : 'Next';
+    nextBtn.disabled = !valid[current]();
+    backLabel.textContent = i > 0 ? 'Back' : 'Home';
+    bar.classList.toggle('hidden', current === 'done');
+    backLink.style.visibility = current === 'done' ? 'hidden' : '';
+  };
+
+  const show = name => {
+    current = name;
+    steps.forEach(s => s.classList.toggle('active', s.dataset.step === name));
+    if (name === 'from') {
+      const moving = checked('services').includes('Moving');
+      document.getElementById('from-title').textContent = moving ? 'Where are we moving you from?' : "Where's the job?";
+    }
+    if (name === 'review') buildReview();
+    refresh();
+    window.scrollTo({ top: 0 });
+    const first = byName(name).querySelector('input:not([type=radio]):not([type=checkbox]), select');
+    if (first && window.matchMedia('(min-width: 641px)').matches) first.focus({ preventScroll: true });
+  };
+
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const addr = (street, apt, zip) => esc([street + (apt ? `, ${apt}` : ''), zip].filter(Boolean).join(' · '));
+  const buildReview = () => {
+    const order = flow();
+    const rows = [
+      ['services', 'Services', checked('services').join(', ') + (form.elements.business.checked ? ' (business)' : '')],
+      ['from', order.includes('to') ? 'Moving from' : 'Job location',
+        `${addr(val('fromStreet'), val('fromApt'), val('fromZip'))}<br>${esc(val('size'))} · ${checked('fromAccess')[0]}`],
+      ['to', 'Moving to', form.elements.toUnknown.checked ? 'New address to be confirmed'
+        : `${addr(val('toStreet'), val('toApt'), val('toZip'))}<br>${checked('toAccess')[0]}`],
+      ['items', 'Big or tricky items', (checked('items').join(', ') || 'Nothing unusual') + (val('notes') ? `<br>“${esc(val('notes'))}”` : '')],
+      ['when', 'Date', `${new Date(val('date') + 'T12:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}<br>${checked('time')[0]}${form.elements.flexible.checked ? ' · flexible' : ''}`],
+      ['contact', 'Contact', `${esc(val('first'))} ${esc(val('last'))}<br>${esc(val('phone'))} · ${esc(val('email'))}<br>Prefers: ${checked('contactPref')[0]}`],
+    ].filter(([step]) => order.includes(step));
+    document.getElementById('review').innerHTML = rows.map(([step, title, body]) =>
+      `<section><h3>${title}</h3><p>${body}</p><button type="button" class="edit" data-goto="${step}">Edit</button></section>`
+    ).join('');
+  };
+  document.getElementById('review').addEventListener('click', e => {
+    const step = e.target.dataset.goto;
+    if (step) show(step);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (!valid[current]()) return;
+    const order = flow();
+    if (current === 'review') {
+      // Demo only: nothing is sent yet. Wire this to email or a form service before launch.
+      const name = val('first');
+      const pref = checked('contactPref')[0].toLowerCase();
+      const how = { call: 'give you a call', text: 'send you a text', email: 'send you an email' }[pref];
+      document.getElementById('done-msg').textContent = `Thanks, ${name}! We'll ${how} soon to go over your free estimate.`;
+      return show('done');
+    }
+    show(order[order.indexOf(current) + 1]);
+  });
+
+  backLink.addEventListener('click', e => {
+    const order = flow();
+    const i = order.indexOf(current);
+    if (i > 0) { e.preventDefault(); show(order[i - 1]); }
+  });
+
+  // "Nothing unusual" clears the other item chips, and vice versa
+  document.getElementById('item-chips').addEventListener('change', e => {
+    if (e.target.id === 'i-none' && e.target.checked) checked('items').forEach(v => form.querySelector(`[name="items"][value="${v}"]`).checked = false);
+    if (e.target.name === 'items' && e.target.checked) document.getElementById('i-none').checked = false;
+  });
+
+  document.getElementById('to-unknown').addEventListener('change', e => {
+    document.getElementById('to-fields').style.display = e.target.checked ? 'none' : '';
+  });
+
+  // Format phone as (xxx) xxx-xxxx while typing
+  document.getElementById('phone').addEventListener('input', e => {
+    const d = digits(e.target.value).slice(0, 10);
+    e.target.value = d.length > 6 ? `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}` : d.length > 3 ? `(${d.slice(0, 3)}) ${d.slice(3)}` : d;
+  });
+  ['from-zip', 'to-zip'].forEach(id => document.getElementById(id).addEventListener('input', e => { e.target.value = digits(e.target.value).slice(0, 5); }));
+
+  form.addEventListener('input', () => { fieldChecks(); refresh(); });
+  form.addEventListener('change', refresh);
+  form.addEventListener('submit', e => { e.preventDefault(); nextBtn.click(); });
+  show('services');
+</script>
+</body>
+</html>
