@@ -1,0 +1,5 @@
+.DS_Store
+# Original downloads and unused logo variants; the page uses the optimized copies
+assets/src-*.png
+assets/mlm-logo.png
+assets/mlm-logo-black.svg

@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abington, PA Movers | Major League Moving</title>
+<meta name="description" content="Major League Moving is a 5-star rated moving company in Abington, PA serving Greater Philadelphia. Local moves, packing, labor and storage. Call (267) 626-4853.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1c1e;
+    --nav: #4a4a4a;
+    --util-bg: #ebecef;
+    --accent: #1f5fbf;
+    --accent-dark: #174a96;
+    --header-bg: #111214;
+    --white: #ffffff;
+    --shadow: 0 6px 18px rgba(0,0,0,.12);
+    --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+    --body: "Barlow", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--white); }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+
+  /* ---------- Header ---------- */
+  .site-header { position: sticky; top: 0; z-index: 50; background: var(--header-bg); }
+
+  /* Utility bar */
+  .util { background: var(--accent); height: 52px; }
+  .util .wrap { height: 100%; display: flex; align-items: center; justify-content: flex-end; gap: 28px; }
+  .util a, .util span {
+    font-family: var(--display); font-weight: 600; font-size: 17px; text-transform: uppercase;
+    letter-spacing: .01em; color: var(--white); display: inline-flex; align-items: center; gap: 7px;
+  }
+  .util svg { width: 14px; height: 14px; fill: currentColor; }
+  .util .stars { color: #f4b400; letter-spacing: 1px; }
+  .util .phone { color: var(--white); font-size: 23px; font-weight: 700; }
+  .util .phone svg { width: 17px; height: 17px; }
+  .util a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Main bar */
+  .main .wrap { height: 84px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+  /* Logo spans both bars, like the reference header */
+  .logo { position: absolute; left: 40px; top: -46px; display: block; width: 124px; height: 124px; }
+  .logo img { width: 100%; height: 100%; display: block; }
+  .nav { margin-left: auto; display: flex; align-items: center; gap: 34px; }
+  .nav > ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 34px; }
+  .nav > ul > li { position: relative; }
+  .nav > ul > li > a {
+    font-family: "Poppins", var(--body); font-weight: 500; font-size: 16px;
+    color: var(--white); padding: 32px 0; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .nav > ul > li > a:hover, .nav > ul > li:focus-within > a { text-decoration: underline; text-underline-offset: 5px; }
+  .caret { width: 9px; height: 9px; fill: currentColor; transition: transform .15s; }
+  .has-menu:hover .caret, .has-menu:focus-within .caret { transform: rotate(180deg); }
+
+  .dropdown {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px);
+    min-width: 230px; list-style: none; margin: 0; padding: 10px 0; background: var(--header-bg);
+    box-shadow: var(--shadow); border-top: 3px solid var(--accent);
+    opacity: 0; visibility: hidden; transition: opacity .15s, transform .15s, visibility .15s;
+  }
+  .has-menu:hover .dropdown, .has-menu:focus-within .dropdown {
+    opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+  }
+  .dropdown a {
+    display: block; padding: 10px 22px; font-family: "Poppins", var(--body); font-weight: 500; font-size: 15px;
+    color: #d6d8dd; text-align: left;
+  }
+  .dropdown a:hover { background: #1d1f23; color: var(--white); }
+
+  .btn-book {
+    font-family: "Poppins", var(--body); font-weight: 500; font-size: 16px;
+    background: var(--accent); color: var(--white); padding: 14px 24px; border-radius: 999px;
+    transition: background .15s;
+  }
+  .btn-book:hover { background: #2f74dd; }
+
+  .menu-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+  .menu-toggle svg { width: 30px; height: 30px; fill: var(--white); }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; }
+  .hero-band { position: relative; background: var(--util-bg); }
+  .hero-band .wrap { padding-top: 64px; padding-bottom: 150px; }
+  .hero-copy { max-width: 620px; }
+  .hero h1 {
+    font-family: var(--display); font-weight: 700; font-size: 66px; line-height: .98;
+    text-transform: uppercase; color: var(--accent-dark); margin: 0 0 14px;
+  }
+  .hero .sub {
+    font-family: var(--display); font-weight: 600; font-size: 31px; line-height: 1.1;
+    text-transform: uppercase; color: var(--nav); margin: 0 0 22px;
+  }
+  .ratings { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-bottom: 34px; }
+  .ratings .item { display: inline-flex; align-items: center; gap: 10px; color: #5f6670; font-size: 17px; }
+  .ratings .divider { width: 1px; height: 30px; background: #c9ccd2; }
+  .ratings .score { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--ink); }
+  .ratings .stars { color: #fbbc04; font-size: 19px; letter-spacing: 2px; }
+  .ratings a.item:hover span:last-child { text-decoration: underline; }
+  .ratings svg { flex: none; }
+  .btn-outline {
+    display: inline-block; font-family: var(--display); font-weight: 700; font-size: 21px;
+    text-transform: uppercase; color: var(--accent-dark); background: #dbe6f7;
+    border: 2px solid var(--accent); border-radius: 4px; padding: 14px 20px; transition: background .15s, color .15s;
+  }
+  .nowrap { white-space: nowrap; }
+  .btn-outline:hover { background: var(--accent); color: var(--white); }
+
+  .hero-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 42%; margin: 0; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 38%; display: block; }
+
+  .hero-cards {
+    position: relative; margin-top: -110px; display: grid; grid-template-columns: repeat(3, 1fr);
+    background: rgba(255,255,255,.93); box-shadow: 0 10px 30px rgba(0,0,0,.10);
+  }
+  .hero-cards a { display: block; text-align: center; padding: 22px 26px 30px; }
+  .hero-cards .icon { width: 68px; height: 68px; margin: 0 auto 14px; display: block; }
+  .hero-cards h2 {
+    font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase;
+    color: var(--accent-dark); margin: 0 0 8px;
+  }
+  .hero-cards p { margin: 0 auto; max-width: 290px; font-size: 15.5px; line-height: 1.5; color: #3c4148; }
+  .hero-cards a:hover h2 { color: var(--accent); }
+  .after-hero { height: 80px; }
+
+  /* ---------- Reviews ---------- */
+  .reviews { background: #e9f0fa; padding: 92px 0 100px; font-family: "Poppins", var(--body); color: #131628; }
+  .reviews-head { text-align: center; margin-bottom: 52px; }
+  .reviews-head .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  .reviews h2 { font-size: 40px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; margin: 0 0 12px; }
+  .reviews-head p { font-size: 16px; color: #555a66; margin: 0; }
+  /* every row as tall as the tallest card, so all six match */
+  .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 22px; }
+  .review {
+    display: flex; flex-direction: column; background: var(--white); border-radius: 12px; padding: 28px 28px 26px;
+    border: 1px solid #dde6f3; box-shadow: 0 1px 2px rgba(19,22,40,.04);
+  }
+  .review .stars { color: #e8b43a; font-size: 17px; letter-spacing: 1px; margin-bottom: 16px; }
+  .review blockquote { margin: 0; font-size: 15px; line-height: 1.6; color: #4a4f5c; }
+  .review blockquote { margin-bottom: 22px; }
+  .review footer { margin-top: auto; border-top: 1px solid #e6ebf2; padding-top: 22px; }
+  .review cite { display: block; font-style: normal; font-weight: 600; font-size: 15px; color: #131628; }
+  .review .meta { font-size: 13px; color: #8a8f99; margin-top: 3px; }
+  .reviews-cta { text-align: center; margin-top: 44px; }
+  .reviews-cta a {
+    display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #131628;
+    background: var(--white); border-radius: 999px; padding: 12px 22px; box-shadow: 0 1px 2px rgba(19,22,40,.06);
+  }
+  .reviews-cta a:hover { box-shadow: 0 4px 14px rgba(19,22,40,.1); }
+
+  /* ---------- Areas we serve ---------- */
+  .areas { background: #252527; color: var(--white); padding: 72px 0 76px; text-align: center; }
+  .areas h2 { font-family: var(--display); font-weight: 700; font-size: 64px; line-height: .95; text-transform: uppercase; margin: 0 0 14px; }
+  .areas h2 .hl { color: #5b9bf5; }
+  .areas-sub { font-size: 18px; color: #c9cbd0; margin: 0 auto 36px; max-width: 640px; }
+  .area-grid { list-style: none; margin: 0 auto 34px; padding: 0; max-width: 1040px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .area-grid a {
+    display: flex; align-items: center; justify-content: center; height: 100%; padding: 16px 10px; border-radius: 6px;
+    font-size: 16px; line-height: 1.3; color: #ececee;
+    background: #3a3a3d; box-shadow: 0 1px 2px rgba(0,0,0,.25); transition: background .15s;
+  }
+  .area-grid a:hover { background: #47474b; }
+  .btn-areas {
+    display: inline-block; font-weight: 600; font-size: 15px; color: var(--white); background: var(--accent);
+    padding: 15px 24px; border-radius: 6px; transition: background .15s;
+  }
+  .btn-areas:hover { background: #2f74dd; }
+
+  /* ---------- Meet the owners ---------- */
+  .owners { background: #fafafa; padding: 80px 0 96px; font-family: "Poppins", var(--body); }
+  .owners h2 { text-align: center; font-size: 26px; font-weight: 800; text-transform: uppercase; color: #131628; line-height: 1.15; margin: 0 0 50px; }
+  .owners-row { display: flex; align-items: center; justify-content: center; gap: 40px; max-width: 1000px; margin: 0 auto; }
+  .owners-photo { flex: none; width: 380px; aspect-ratio: 1; margin: 0; border: 10px solid #000; }
+  .owners-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block; }
+  .owners-copy p { font-size: 17px; line-height: 1.55; color: #000; margin: 0 0 22px; }
+  .owners-copy p:last-child { margin-bottom: 0; }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--white); padding: 84px 0 96px; font-family: "Poppins", var(--body); color: #131628; }
+  .services-head { text-align: center; max-width: 780px; margin: 0 auto 48px; }
+  .services-head .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  .services h2 { font-size: 40px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; margin: 0 0 12px; }
+  .services-head p { font-size: 16px; color: #555a66; margin: 0; }
+  .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .service {
+    display: flex; flex-direction: column; border: 1px solid #e3e8f0; border-radius: 12px; padding: 26px 24px 22px;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
+  }
+  .service:hover { border-color: #c3d4ee; box-shadow: 0 10px 28px rgba(31,95,191,.10); transform: translateY(-2px); }
+  .service-icon { width: 52px; height: 52px; border-radius: 50%; background: #e9f0fa; display: grid; place-items: center; margin-bottom: 18px; }
+  .service-icon svg { width: 28px; height: 28px; }
+  .service h3 { font-size: 17px; font-weight: 600; margin: 0 0 8px; }
+  .service p { font-size: 14.5px; line-height: 1.6; color: #4a4f5c; margin: 0 0 18px; }
+  .service a { margin-top: auto; font-size: 14px; font-weight: 600; color: var(--accent); }
+  .service a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .carousel-nav { display: none; }
+
+  /* ---------- FAQ ---------- */
+  .faq { background: #f8fafd; border-top: 1px solid #e6ebf2; padding: 92px 0 64px; font-family: "Poppins", var(--body); color: #131628; }
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+  .faq h2 { text-align: center; font-size: 36px; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; margin: 0 0 40px; }
+  .faq details { background: #fcfcfd; border: 1px solid #e6e8ec; border-radius: 10px; margin-bottom: 13px; transition: border-color .15s; }
+  .faq details[open] { border-color: #c9d8f0; background: var(--white); }
+  .faq summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 18px 24px; font-size: 17px; font-weight: 600;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: ""; flex: none; width: 8px; height: 8px; margin: -5px 4px 0 0;
+    border-right: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent); transform: rotate(45deg); transition: transform .2s;
+  }
+  .faq details[open] summary::after { transform: rotate(-135deg); margin-top: 3px; }
+  .faq summary:hover { color: var(--accent-dark); }
+  .faq details p { margin: 0; padding: 0 24px 22px; font-size: 15px; line-height: 1.65; color: #4a4f5c; }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta {
+    background: radial-gradient(ellipse 60% 70% at 50% 0%, rgba(31,95,191,.35), transparent 70%), #0e0f11;
+    color: var(--white); text-align: center; padding: 104px 16px; font-family: "Poppins", var(--body);
+  }
+  .final-cta h2 { font-size: 40px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; margin: 0 0 16px; }
+  .final-cta p { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,.75); margin: 0 0 30px; }
+  .btn-cta {
+    display: inline-block; font-size: 16px; font-weight: 600; color: var(--white); padding: 16px 44px; border-radius: 8px;
+    background: linear-gradient(135deg, #4f8ff0, var(--accent) 60%, var(--accent-dark));
+    box-shadow: 0 8px 24px rgba(31,95,191,.35); transition: transform .15s, box-shadow .15s;
+  }
+  .btn-cta:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(31,95,191,.45); }
+  .final-cta .call { display: block; margin-top: 18px; font-size: 14px; color: rgba(255,255,255,.7); }
+  .final-cta .call a { color: var(--white); font-weight: 600; }
+  .final-cta .call a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---------- Footer ---------- */
+  .site-footer { background: var(--accent); color: var(--white); font-family: "Poppins", var(--body); padding: 48px 0 32px; }
+  .footer-top { display: flex; align-items: center; gap: 18px; padding-bottom: 34px; }
+  .footer-top img { width: 92px; height: 92px; }
+  .footer-top p { margin: 0; max-width: 360px; font-size: 14px; font-weight: 300; line-height: 1.55; color: rgba(255,255,255,.85); }
+  .footer-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .footer-cols h3 { margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  .footer-cols ul { list-style: none; margin: 0; padding: 0; }
+  .footer-cols li { padding-bottom: 14px; font-size: 14px; font-weight: 300; line-height: 1.45; color: rgba(255,255,255,.85); }
+  .footer-cols a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+  .footer-cols .strong { font-weight: 500; color: var(--white); font-size: 16px; }
+  .footer-legal { margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.2); text-align: center; }
+  .footer-legal nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin-bottom: 12px; }
+  .footer-legal nav a { font-size: 15px; font-weight: 500; }
+  .footer-legal nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .footer-legal p { margin: 0; font-size: 12px; font-weight: 300; line-height: 1.5; color: rgba(255,255,255,.8); }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 1100px) {
+    .util .hide-md { display: none; }
+  }
+  @media (max-width: 900px) {
+    .wrap { padding: 0 16px; }
+    .util { height: 44px; }
+    .util .wrap { justify-content: flex-end; }
+    .util .hide-sm { display: none; }
+    .util .phone { font-size: 20px; }
+    .main .wrap { height: 72px; }
+    .logo { left: 16px; top: -40px; width: 100px; height: 100px; }
+    .menu-toggle { display: block; margin-left: auto; }
+    .nav { position: absolute; top: 72px; left: 0; right: 0; background: var(--header-bg);
+           flex-direction: column; align-items: stretch; gap: 0; padding: 8px 16px 20px;
+           box-shadow: var(--shadow); display: none; }
+    .nav.open { display: flex; }
+    .nav > ul { flex-direction: column; gap: 0; }
+    .nav > ul > li > a { padding: 14px 0; width: 100%; justify-content: space-between; border-bottom: 1px solid #2a2c31; }
+    .dropdown { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none;
+                border-top: 0; padding: 0 0 8px 12px; display: none; }
+    .has-menu.open .dropdown { display: block; }
+    .has-menu:hover .dropdown { transform: none; }
+    .dropdown a { text-align: left; padding: 8px 0; }
+    .btn-book { text-align: center; margin-top: 16px; }
+
+    .hero-band .wrap { padding-top: 40px; padding-bottom: 36px; }
+    .hero h1 { font-size: 46px; }
+    .hero .sub { font-size: 23px; }
+    .ratings .divider { display: none; }
+    .hero-photo { position: static; width: 100%; height: 300px; }
+    .hero-cards { margin-top: 0; grid-template-columns: 1fr; box-shadow: none; }
+    .hero-cards a { padding: 26px 16px; border-bottom: 1px solid #eceef1; }
+    .hero-cards-wrap { padding: 0; }
+
+    .reviews { padding: 64px 0 72px; }
+    .reviews h2 { font-size: 30px; }
+    .reviews-head { margin-bottom: 32px; }
+    .review-grid { grid-template-columns: 1fr; gap: 16px; }
+    .review { padding: 24px 22px; }
+
+    .areas { padding: 56px 0 60px; }
+    .areas h2 { font-size: 42px; }
+    .areas-sub { font-size: 16px; margin-bottom: 26px; }
+    .area-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .area-grid a { font-size: 13.5px; padding: 14px 4px; white-space: nowrap; letter-spacing: -.01em; }
+
+    .owners { padding: 56px 0 64px; }
+    .owners h2 { margin-bottom: 28px; }
+    .owners-row { flex-direction: column; gap: 28px; }
+    .owners-photo { width: 100%; max-width: 380px; }
+    .owners-copy p { font-size: 16px; }
+
+    .services { padding: 56px 0 64px; }
+    .services h2 { font-size: 28px; }
+    .services-head { margin-bottom: 28px; }
+    .service-grid {
+      display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+      margin: 0 -16px; padding: 0 16px 4px; scroll-padding-left: 16px; -webkit-overflow-scrolling: touch;
+    }
+    .service-grid::-webkit-scrollbar { display: none; }
+    .service { flex: 0 0 82%; scroll-snap-align: start; min-height: 330px; padding: 30px 26px 26px; background: #f4f7fc; border-color: #dfe6f1; }
+    .service:hover { transform: none; box-shadow: none; }
+    .service-icon { width: 64px; height: 64px; background: var(--white); margin-bottom: 24px; }
+    .service-icon svg { width: 34px; height: 34px; }
+    .service h3 { font-size: 22px; margin-bottom: 10px; }
+    .service p { font-size: 16px; }
+    .carousel-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 22px; }
+    .dots { display: flex; gap: 8px; align-items: center; }
+    .dots span { width: 8px; height: 8px; border-radius: 999px; background: #c9cfd9; transition: width .2s, background .2s; }
+    .dots span.on { width: 28px; background: #131628; }
+    .arrows { display: flex; gap: 10px; }
+    .arrows button {
+      width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #131628; background: var(--white);
+      display: grid; place-items: center; cursor: pointer; padding: 0; color: #131628;
+    }
+    .arrows button:disabled { border-color: #d5d9e0; color: #c3c8d1; cursor: default; }
+    .arrows svg { width: 20px; height: 20px; }
+
+    .faq { padding: 64px 0 44px; }
+    .faq h2 { font-size: 28px; margin-bottom: 28px; }
+    .faq summary { padding: 16px 18px; font-size: 16px; }
+    .faq details p { padding: 0 18px 18px; }
+    .final-cta { padding: 76px 16px; }
+    .final-cta h2 { font-size: 30px; }
+
+    .site-footer { padding: 40px 0 28px; }
+    .footer-top { flex-direction: column; align-items: flex-start; }
+    .footer-cols { grid-template-columns: 1fr 1fr; gap: 8px 20px; }
+  }
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .review-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 901px) and (max-width: 1150px) {
+    .hero h1 { font-size: 54px; }
+    .hero-copy { max-width: 52%; }
+  }
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .area-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're based in Abington and cover Greater Philadelphia, including Glenside, Jenkintown, Willow Grove, Blue Bell, Lansdale, Conshohocken and the city itself. We also handle moves from Pennsylvania into New Jersey."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a move cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how much you're moving, how far, stairs and access, and whether you want us to pack. Tell us about your move and we'll give you a clear quote before you book, with no surprises on moving day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you move pianos and other heavy items?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We've moved pianos out of basements and up flights of stairs, along with safes, gym equipment and other especially heavy pieces. Let us know what you have when you request a quote so we bring the right gear."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you pack everything for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We can pack your whole home or just the fragile items, and we bring wardrobe boxes for closets. You can also pack yourself and have us handle the heavy lifting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle office and commercial moves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We move offices and small businesses, including furniture disassembly and reassembly, and we'll work around your schedule to keep downtime short."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you haul away things I don't want to take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We can remove furniture, junk and leftover items on the same trip, so you're not stuck dealing with them after the move."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far ahead should I book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The earlier the better, especially for weekends and the end of the month. If you're in a pinch, call anyway. We've squeezed in plenty of short-notice moves."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="util">
+    <div class="wrap">
+      <span class="hide-sm">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        Serving Greater Philadelphia
+      </span>
+      <a class="hide-sm hide-md" href="#reviews"><span class="stars">★★★★★</span> 5.0 &middot; 52 Google Reviews</a>
+      <a class="phone" href="tel:+12676264853" aria-label="Call Major League Moving at (267) 626-4853">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        (267) 626-4853
+      </a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="wrap">
+      <a class="logo" href="#" aria-label="Major League Moving home">
+        <img src="assets/mlm-logo-white.svg" alt="Major League Moving" width="100" height="100">
+      </a>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Main">
+        <ul>
+          <li class="has-menu">
+            <a href="#moving" aria-haspopup="true">Moving
+              <svg class="caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4z"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="#areas">Areas We Serve</a></li>
+              <li><a href="#full-service">Full-Service Moves</a></li>
+              <li><a href="#packing">Packing Services</a></li>
+              <li><a href="#labor">Labor-Only Help</a></li>
+              <li><a href="#pods">Pod &amp; Container Loading</a></li>
+              <li><a href="#commercial">Commercial &amp; Office Moves</a></li>
+              <li><a href="#piano">Piano &amp; Heavy Items</a></li>
+              <li><a href="#junk">Junk Removal</a></li>
+              <li><a href="#storage">Storage Moves</a></li>
+            </ul>
+          </li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#meet-us">Meet Us</a></li>
+        </ul>
+        <a class="btn-book" href="#book">Book Now</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-band">
+      <div class="wrap">
+        <div class="hero-copy">
+          <h1 id="hero-heading">Stress-free moving in Greater Philadelphia</h1>
+          <p class="sub">Locally owned. Five-star rated. <span class="nowrap">Big-league</span> care.</p>
+
+          <div class="ratings">
+            <a class="item" href="https://www.google.com/maps/search/?api=1&query=Major+League+Moving+Abington+PA" target="_blank" rel="noopener">
+              <svg width="28" height="28" viewBox="0 0 48 48" aria-label="Google">
+                <path fill="#4285F4" d="M44.5 24.5c0-1.5-.1-3-.4-4.4H24v8.4h11.5a9.9 9.9 0 0 1-4.3 6.5v5.4h6.9c4.1-3.8 6.4-9.3 6.4-15.9z"/>
+                <path fill="#34A853" d="M24 45c5.8 0 10.6-1.9 14.1-5.2l-6.9-5.4c-1.9 1.3-4.4 2.1-7.2 2.1-5.6 0-10.3-3.8-12-8.8H4.9v5.5A21 21 0 0 0 24 45z"/>
+                <path fill="#FBBC05" d="M12 27.7a12.6 12.6 0 0 1 0-8V14.2H4.9a21 21 0 0 0 0 19z"/>
+                <path fill="#EA4335" d="M24 11.4c3.1 0 5.9 1.1 8.1 3.2l6.1-6.1A20.4 20.4 0 0 0 24 3 21 21 0 0 0 4.9 14.2l7.1 5.5c1.7-5 6.4-8.3 12-8.3z"/>
+              </svg>
+              <span class="score">5.0</span>
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span>52 Google reviews</span>
+            </a>
+            <span class="divider" aria-hidden="true"></span>
+            <span class="item">
+              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--accent)" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              <span class="score" style="font-size:20px">Abington, PA</span>
+              <span>Locally owned</span>
+            </span>
+          </div>
+
+          <a class="btn-outline" href="#book">Get your FREE estimate</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/hero.jpg" alt="Major League Moving owners loading an exercise bike into their moving truck" width="505" height="762">
+      </figure>
+    </div>
+
+    <div class="wrap hero-cards-wrap">
+      <div class="hero-cards">
+        <a href="#areas">
+          <svg class="icon" viewBox="0 0 68 68" aria-hidden="true">
+            <path d="M12 34 34 14l22 20v24H12z" fill="#dbe6f7" transform="translate(3 3)"/>
+            <path d="M12 34 34 14l22 20v24H12z" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M28 58V44h12v14" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+            <circle cx="34" cy="32" r="4.5" fill="none" stroke="var(--accent-dark)" stroke-width="2.5"/>
+          </svg>
+          <h2>Areas we serve</h2>
+          <p>Based in Abington and moving families across Glenside, Jenkintown, Willow Grove and Philly.</p>
+        </a>
+        <a href="#pricing">
+          <svg class="icon" viewBox="0 0 68 68" aria-hidden="true">
+            <circle cx="37" cy="37" r="26" fill="#dbe6f7"/>
+            <circle cx="34" cy="34" r="26" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+            <path d="M41 25c-1.5-2-4-3-7-3-4 0-7 2-7 5.5 0 8 14 4.5 14 12.5 0 3.5-3 5.5-7 5.5-3.2 0-5.8-1.2-7.3-3.4M34 17v6m0 22v6" fill="none" stroke="var(--accent-dark)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <h2>See our pricing</h2>
+          <p>Straightforward rates and a free estimate before any work begins.</p>
+        </a>
+        <a href="#book">
+          <svg class="icon" viewBox="0 0 68 68" aria-hidden="true">
+            <rect x="11" y="15" width="52" height="40" rx="2" fill="#dbe6f7"/>
+            <rect x="8" y="12" width="52" height="40" rx="2" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+            <path d="M8 21h52" stroke="var(--accent)" stroke-width="2.5"/>
+            <rect x="15" y="28" width="14" height="14" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+            <path d="M35 30h18m-18 6h18m-18 6h12" stroke="var(--accent-dark)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <h2>Get a free quote</h2>
+          <p>Tell us about your move online and we'll get back to you with a quote fast.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="moving" aria-labelledby="services-heading">
+    <div class="wrap">
+      <div class="services-head">
+        <p class="eyebrow">What we do</p>
+        <h2 id="services-heading">Moving services for every kind of move</h2>
+        <p>From a single piano to a whole office, we've got the crew and the gear for it.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service" id="full-service">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 15 16 6l11 9v12H5z" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 27v-7h6v7" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Full-Service Moves</h3>
+          <p>Homes and apartments, start to finish. We load, transport, unload and set your furniture up in the right rooms.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="service" id="packing">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 10 16 5l11 5v13l-11 5-11-5z" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10l11 5 11-5M16 15v13" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Packing Services</h3>
+          <p>Whole-house packing or just the breakables, with wardrobe boxes for your closets.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="service" id="labor">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 4h3l5 18" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="25" r="3" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="8" width="11" height="9" rx="1" transform="rotate(-15 18 12)" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 24l7-2" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Labor-Only Help</h3>
+          <p>Already have a truck? We'll handle the heavy lifting, loading or unloading on your schedule.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="service" id="pods">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="9" width="24" height="16" rx="1.5" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 9v16M16 9v16M22 9v16" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 25v3M25 25v3" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Pod &amp; Container Loading</h3>
+          <p>We load pods and portable storage containers tight and secure so nothing shifts in transit.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="service" id="commercial">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="5" width="18" height="23" rx="1" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 10h3m4 0h3M11 15h3m4 0h3M11 20h3m4 0h3M14 28v-3h4v3" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Commercial &amp; Office Moves</h3>
+          <p>Offices and small businesses, including furniture disassembly and reassembly, with minimal downtime.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="service" id="piano">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 12h24v10H4z" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16h24M8 16v6M12 16v6M16 16v6M20 16v6M24 16v6M7 22v5M25 22v5" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12c0-4 4-6 10-6s10 2 10 6" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Piano &amp; Heavy Items</h3>
+          <p>Pianos, safes, gym equipment and other heavy pieces, moved up and down stairs with care.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="service" id="junk">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 9h18M13 9V6h6v3M9 9l1.5 18h11L23 9" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 14v8M18 14v8" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Junk Removal</h3>
+          <p>Clear out what you don't want to bring, on the same trip or as a separate haul-away.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="service" id="storage">
+          <span class="service-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 13 16 6l12 7v15H4z" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 28V17h14v11M9 21h14M9 25h14" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Storage Moves</h3>
+          <p>Moving into or out of a storage unit? We'll load, organize and stack it so you can find things later.</p>
+          <a href="#book">Get a quote <span aria-hidden="true">&rarr;</span></a>
+        </article>
+      </div>
+      <div class="carousel-nav">
+        <div class="dots" aria-hidden="true"></div>
+        <div class="arrows">
+          <button type="button" class="prev" aria-label="Previous service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="next" aria-label="Next service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" aria-labelledby="reviews-heading">
+    <div class="wrap">
+      <div class="reviews-head">
+        <p class="eyebrow">Don't take our word for it</p>
+        <h2 id="reviews-heading">See what our clients are saying</h2>
+        <p>Real Google reviews from clients just like you.</p>
+      </div>
+
+      <div class="review-grid">
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Kevin and Trey were wonderful and made my move from Glenside to Conshohocken stress free. They were professional and careful with all of my furniture. Highly recommend to anyone who is looking to move!</blockquote>
+          <footer><cite>Gianna T.</cite><div class="meta">Google review · Glenside to Conshohocken</div></footer>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>We had Major League Moving move our 4500 sq. ft. office from Blue Bell to Lansdale and they worked with us and got it done quickly and efficiently. Nothing broke, dissembled and reassembled furniture, and gave a good price. Would 100% use them again.</blockquote>
+          <footer><cite>Jason M.</cite><div class="meta">Google review · Office move</div></footer>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>10/10 recommend Major League Moving. Professional and efficient, Kevin and Trey made moving a piano out of a basement (and then across town and up a few more stairs) a breeze! All around good work done by good people.</blockquote>
+          <footer><cite>Caitlin G.</cite><div class="meta">Google review · Piano move</div></footer>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Wonderful experience. I needed a basement cleared out and moved to a storage unit. Once I looked into the storage unit after transport, they had organized everything perfectly. Would highly recommend.</blockquote>
+          <footer><cite>Patrick C.</cite><div class="meta">Google review · Storage move</div></footer>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>I had a wonderful experience with Major League, they were able to squeeze me in when I was moving to a temporary accommodation after a storm and got me back home a few months later. They were quick and took great care of my items.</blockquote>
+          <footer><cite>Michelle O.</cite><div class="meta">Google review · Short-notice move</div></footer>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Major League movers were great Moved us from PA to New Jersey without any issues- price and value were very good - we were very happy with their performance, and will use them again</blockquote>
+          <footer><cite>Leo S.</cite><div class="meta">Google review · PA to New Jersey</div></footer>
+        </article>
+      </div>
+
+      <div class="reviews-cta">
+        <a href="https://www.google.com/maps/place/Major+League+Moving/@40.1298663,-75.1141566,17z/data=!4m8!3m7!1s0x4ec11f7f969051e1:0x15797cd014f89e8f!8m2!3d40.1298663!4d-75.1141566!9m1!1b1" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#4285F4" d="M44.5 24.5c0-1.5-.1-3-.4-4.4H24v8.4h11.5a9.9 9.9 0 0 1-4.3 6.5v5.4h6.9c4.1-3.8 6.4-9.3 6.4-15.9z"/>
+            <path fill="#34A853" d="M24 45c5.8 0 10.6-1.9 14.1-5.2l-6.9-5.4c-1.9 1.3-4.4 2.1-7.2 2.1-5.6 0-10.3-3.8-12-8.8H4.9v5.5A21 21 0 0 0 24 45z"/>
+            <path fill="#FBBC05" d="M12 27.7a12.6 12.6 0 0 1 0-8V14.2H4.9a21 21 0 0 0 0 19z"/>
+            <path fill="#EA4335" d="M24 11.4c3.1 0 5.9 1.1 8.1 3.2l6.1-6.1A20.4 20.4 0 0 0 24 3 21 21 0 0 0 4.9 14.2l7.1 5.5c1.7-5 6.4-8.3 12-8.3z"/>
+          </svg>
+          Read all 52 reviews on Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="areas" id="areas" aria-labelledby="areas-heading">
+    <div class="wrap">
+      <h2 id="areas-heading">Find trusted movers<br><span class="hl">near you</span></h2>
+      <p class="areas-sub">Proudly serving the Greater Philadelphia area.</p>
+      <ul class="area-grid">
+        <li><a href="areas-we-serve.html#abington-township">Abington Township</a></li>
+        <li><a href="areas-we-serve.html#cheltenham-township">Cheltenham Township</a></li>
+        <li><a href="areas-we-serve.html#upper-dublin-township">Upper Dublin Township</a></li>
+        <li><a href="areas-we-serve.html#lower-merion-township">Lower Merion Township</a></li>
+        <li><a href="areas-we-serve.html#horsham-township">Horsham Township</a></li>
+        <li><a href="areas-we-serve.html#west-goshen-township">West Goshen Township</a></li>
+        <li><a href="areas-we-serve.html#east-goshen-township">East Goshen Township</a></li>
+        <li><a href="areas-we-serve.html#westtown-township">Westtown Township</a></li>
+        <li><a href="areas-we-serve.html#warminster-township">Warminster Township</a></li>
+        <li><a href="areas-we-serve.html#northampton-township">Northampton Township</a></li>
+      </ul>
+      <a class="btn-areas" href="areas-we-serve.html">See more locations</a>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="wrap">
+      <div class="faq-inner">
+        <h2 id="faq-heading">Questions customers ask before they book</h2>
+        <details>
+          <summary>What areas do you serve?</summary>
+          <p>We&#x27;re based in Abington and cover Greater Philadelphia, including Glenside, Jenkintown, Willow Grove, Blue Bell, Lansdale, Conshohocken and the city itself. We also handle moves from Pennsylvania into New Jersey.</p>
+        </details>
+        <details>
+          <summary>How much does a move cost?</summary>
+          <p>It depends on how much you&#x27;re moving, how far, stairs and access, and whether you want us to pack. Tell us about your move and we&#x27;ll give you a clear quote before you book, with no surprises on moving day.</p>
+        </details>
+        <details>
+          <summary>Do you move pianos and other heavy items?</summary>
+          <p>Yes. We&#x27;ve moved pianos out of basements and up flights of stairs, along with safes, gym equipment and other especially heavy pieces. Let us know what you have when you request a quote so we bring the right gear.</p>
+        </details>
+        <details>
+          <summary>Can you pack everything for me?</summary>
+          <p>Yes. We can pack your whole home or just the fragile items, and we bring wardrobe boxes for closets. You can also pack yourself and have us handle the heavy lifting.</p>
+        </details>
+        <details>
+          <summary>Do you handle office and commercial moves?</summary>
+          <p>Yes. We move offices and small businesses, including furniture disassembly and reassembly, and we&#x27;ll work around your schedule to keep downtime short.</p>
+        </details>
+        <details>
+          <summary>Can you haul away things I don&#x27;t want to take?</summary>
+          <p>Yes. We can remove furniture, junk and leftover items on the same trip, so you&#x27;re not stuck dealing with them after the move.</p>
+        </details>
+        <details>
+          <summary>How far ahead should I book?</summary>
+          <p>The earlier the better, especially for weekends and the end of the month. If you&#x27;re in a pinch, call anyway. We&#x27;ve squeezed in plenty of short-notice moves.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="owners" id="meet-us" aria-labelledby="owners-heading">
+    <div class="wrap">
+      <h2 id="owners-heading">Meet the owners</h2>
+      <div class="owners-row">
+        <figure class="owners-photo">
+          <img src="assets/owners.jpg" alt="Major League Moving owners Kevin and Trey with their truck and a Major League Moving bin" width="509" height="764" loading="lazy">
+        </figure>
+        <div class="owners-copy">
+          <p>We're Trey and Kevin, the owners of Major League Moving. We were born and raised just minutes apart, Trey in Abington and Kevin in Glenside, and we've always shared a deep connection to this community and a passion for helping others.</p>
+          <p>With over 15 years of combined experience in moving and storage, we've seen it all, from small apartment moves to complex business relocations. We started Major League Moving with a simple idea: turn a stressful time into a seamless experience, built on reliability, professionalism and clear communication.</p>
+          <p>As a locally owned small business, we take real pride in serving our neighbors with personal care and attention to detail. That's why 52 customers have given us five stars on Google, and why we treat every move like it's our own family's.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" id="book" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Ready for a stress-free move?</h2>
+    <p>Locally owned. Five-star rated.<br>Serving Abington and all of Greater Philadelphia.</p>
+    <a class="btn-cta" href="tel:+12676264853">Get your FREE estimate</a>
+    <span class="call">or call <a href="tel:+12676264853">(267) 626-4853</a></span>
+  </section>
+</main>
+
+<footer class="site-footer" aria-label="Site footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <img src="assets/mlm-logo-white.svg" alt="Major League Moving" width="92" height="92">
+      <p>Locally owned movers based in Abington, PA, serving families and businesses across Greater Philadelphia.</p>
+    </div>
+
+    <div class="footer-cols">
+      <div>
+        <h3>Moving</h3>
+        <ul>
+          <li><a href="#full-service">Full-Service Moves</a></li>
+          <li><a href="#packing">Packing Services</a></li>
+          <li><a href="#labor">Labor-Only Help</a></li>
+          <li><a href="#pods">Pod &amp; Container Loading</a></li>
+          <li><a href="#commercial">Commercial &amp; Office Moves</a></li>
+          <li><a href="#piano">Piano &amp; Heavy Items</a></li>
+          <li><a href="#junk">Junk Removal</a></li>
+          <li><a href="#storage">Storage Moves</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Areas We Serve</h3>
+        <ul>
+          <li><a href="#areas">Abington</a></li>
+          <li><a href="#areas">Glenside</a></li>
+          <li><a href="#areas">Jenkintown</a></li>
+          <li><a href="#areas">Willow Grove</a></li>
+          <li><a href="#areas">Philadelphia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#meet-us">Meet Us</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#book">Book Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a class="strong" href="tel:+12676264853">(267) 626-4853</a></li>
+          <li>2013 Chester Ave<br>Abington, PA 19001</li>
+          <li>Open 7 days a week</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <nav aria-label="Legal">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms &amp; Conditions</a>
+      </nav>
+      <p>&copy; 2026 Major League Moving, LLC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('primary-nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  // On mobile, tapping "Moving" expands its submenu instead of navigating
+  document.querySelector('.has-menu > a').addEventListener('click', e => {
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      e.preventDefault();
+      e.currentTarget.parentElement.classList.toggle('open');
+    }
+  });
+  // Services carousel (phones): dots follow the scroll position, arrows step one card
+  const track = document.querySelector('.service-grid');
+  const cards = [...track.children];
+  const dots = document.querySelector('.dots');
+  const prev = document.querySelector('.carousel-nav .prev');
+  const next = document.querySelector('.carousel-nav .next');
+  cards.forEach(() => dots.appendChild(document.createElement('span')));
+  const step = () => cards[1].offsetLeft - cards[0].offsetLeft;
+  let current = 0;
+  const update = () => {
+    const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    current = atEnd ? cards.length - 1 : Math.round(track.scrollLeft / step());
+    [...dots.children].forEach((d, j) => d.classList.toggle('on', j === current));
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = atEnd;
+  };
+  // Scroll to an exact card; relative scrollBy fights scroll-snap in Safari and Chrome
+  const go = i => {
+    current = i = Math.max(0, Math.min(cards.length - 1, i));
+    track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: 'smooth' });
+  };
+  track.addEventListener('scroll', update, { passive: true });
+  prev.addEventListener('click', () => go(current - 1));
+  next.addEventListener('click', () => go(current + 1));
+  update();
+</script>
+</body>
+</html>
